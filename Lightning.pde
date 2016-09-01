@@ -22,14 +22,14 @@ void draw()
 
 	if (mouseY < 300){
 		endY = startY + (int)(Math.random()*18);
-		endX = startX + (int)(Math.random()*9)+subNumX;
+		endX = startX + (int)(Math.random()*36)+subNumX;
 		line(startX,startY,endX,endY);
 		startX = endX;
 		startY = endY;
 	}
 	else {
 		endY = startY + (int)(Math.random()*18)-36;
-		endX = startX + (int)(Math.random()*9)+subNumX;
+		endX = startX + (int)(Math.random()*36)+subNumX;
 		line(startX,startY,endX,endY);
 		startX = endX;
 		startY = endY;
