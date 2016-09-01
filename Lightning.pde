@@ -7,23 +7,19 @@ void setup()
 {
 	frameRate(50);
 	size(600,600);
+	noStroke();
+	fill(205,92,92);
+	rect(0,300,600,300);
+	fill(100,149,237);
+	rect(0,0,600,300);
 }
 void draw()
 {
 	//background(0);
+	
 	strokeWeight((float)(Math.random()*5));
 	stroke((int)(Math.random()*255),(int)(Math.random()*255),(int)(Math.random()*255));
-	//Starting code might not be useful
-	/*if (endX < 600){
-		endX = startX + (int)(Math.random()*18);
-		endY = startY + (int)(Math.random()*36*2)-(18*2);
-		line(startX,startY,endX,endY);
-		startX = endX;
-		startY = endY;
-	}
-	*/
-	//useful code moved to keypressed
-	/*
+
 	if (mouseY < 300){
 		endY = startY + (int)(Math.random()*18);
 		endX = startX + (int)(Math.random()*36)+subNumX;
@@ -39,15 +35,16 @@ void draw()
 		startY = endY;
 
 	}
-	*/
+	
 	
 	// if statement so that the lightning doesnt leave the screenX
-	if (startX < 50){
+	if (startX < 0){
 		subNumX = 18;
 	}
-	else if (startX > 550){
+	else if (startX > 600){
 		subNumX = -18;
 	}
+	
 
 }
 void mousePressed()
@@ -58,24 +55,4 @@ void mousePressed()
 		startY= mouseY;
 }
 
-void keyPressed(){
-	if (key == CODED) {
- 
-	if (keyCode == DOWN){
-		endY = startY + (int)(Math.random()*18);
-		endX = startX + (int)(Math.random()*36)+subNumX;
-		line(startX,startY,endX,endY);
-		startX = endX;
-		startY = endY;
-	}
-	else if (keyCode == UP) {
-		endY = startY + (int)(Math.random()*18)-36;
-		endX = startX + (int)(Math.random()*36)+subNumX;
-		line(startX,startY,endX,endY);
-		startX = endX;
-		startY = endY;
-	}
-
-	}
-}
 
