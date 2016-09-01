@@ -2,7 +2,7 @@ int startX= mouseX;
 int startY= mouseY;
 int endX= mouseX;
 int endY= mouseY;
-int subNumX = -18;
+int multNum = 36;
 void setup()
 {
 	frameRate(50);
@@ -22,14 +22,14 @@ void draw()
 
 	if (mouseY < 300){
 		endY = startY + (int)(Math.random()*18);
-		endX = startX + (int)(Math.random()*36)+subNumX;
+		endX = startX + (int)(Math.random()*multNum);
 		line(startX,startY,endX,endY);
 		startX = endX;
 		startY = endY;
 	}
 	else {
-		endY = startY + (int)(Math.random()*18)-36;
-		endX = startX + (int)(Math.random()*36)+subNumX;
+		endY = startY + (int)(Math.random()*-18);
+		endX = startX + (int)(Math.random()*multNum);
 		line(startX,startY,endX,endY);
 		startX = endX;
 		startY = endY;
@@ -39,10 +39,10 @@ void draw()
 	
 	// if statement so that the lightning doesnt leave the screenX
 	if (startX < 0){
-		subNumX = 18;
+		multNum = 9;
 	}
 	else if (startX > 600){
-		subNumX = -18;
+		multNum = -9;
 	}
 	
 
