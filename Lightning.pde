@@ -1,3 +1,4 @@
+/*
 int startX= mouseX;
 int startY= mouseY;
 int endX= mouseX;
@@ -55,4 +56,12 @@ void mousePressed()
 		startY= mouseY;
 }
 
+*/
 
+for(int y = 10 ; y <= 90 ; y +=20 ) 
+{
+  for(int x = 30 ; x <= 90 ; x +=30) 
+  {
+    ellipse(y,x,15,15);
+  }
+}
